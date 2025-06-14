@@ -25,86 +25,90 @@ class FG_Beginner_Guide
 
             };
 
-            if (choice == 1)
-            {
-                Console.WriteLine("\nWhat fighting game would you like to learn?");
-                Console.WriteLine("Type the number for the game option.\n");
-                foreach (String game in games)
-                {
-
-                    Console.WriteLine(game);
-
-                }
-
-                Console.WriteLine("\nInput: ");
-                int gamechoice = Convert.ToInt32(Console.ReadLine());
-                switch (gamechoice)
-                {
-                    case 1:
-                        Console.WriteLine("\nTekken 8 is 3D fighting game that focus on movement.");
-                        Console.WriteLine("Tekken 8 has a good tutorial that teaches you about movement & mechanics");
-                        Console.WriteLine("\nWhat would you like to learn about Tekken 8?");
-                        Console.WriteLine("1.Movement \n2.Picking a Character \n3.Combos \n");
-                        Console.WriteLine("Input: ");
-                        int fg_info = Convert.ToInt32(Console.ReadLine());
-                        if (fg_info == 1)
-                        {
-                            FG_Movement.Tekken_8();
-                        }
-                        if (fg_info == 2)
-                        {
-                            FG_Character.TK8_Characters();
-                        }
-                        if (fg_info == 3)
-                        {
-                            FG_Combos.TK8_Combos();
-                        }
-                        break;
-                    case 2:
-                        Console.WriteLine("\nStreet Fighter 6 is 2D fighting game that focus on movement.");
-                        Console.WriteLine("Street Fighter 6 has a good tutorial that teaches you about movement & mechanics");
-                        Console.WriteLine("\nWhat would you like to learn about Street Fighter 6?");
-                        Console.WriteLine("1.Movement \n2.Picking a Character \n3.Combos \n");
-                        Console.WriteLine("Input: ");
-                        fg_info = Convert.ToInt32(Console.ReadLine());
-                        if (fg_info == 1)
-                        {
-                            FG_Movement.SF6();
-                        }
-                        if (fg_info == 2)
-                        {
-                            FG_Character.SF6_Characters();
-                        }
-                        if (fg_info == 3)
-                        {
-                            FG_Combos.SF6_Combos();
-                        }
-                        break;
-                    case 3:
-                        Console.WriteLine("\nMortal Kombat 1 is 2D fighting game that focus on movement.");
-                        Console.WriteLine("Mortal Kombat 1 has a good tutorial that teaches you about movement & mechanics");
-                        Console.WriteLine("\nWhat would you like to learn about Mortal Kombat 1?");
-                        Console.WriteLine("1.Movement \n2.Picking a Character \n3.Combos \n");
-                        Console.WriteLine("Input: ");
-                        fg_info = Convert.ToInt32(Console.ReadLine());
-                        if (fg_info == 1)
-                        {
-                            FG_Movement.MK1();
-                        }
-                        break;
-                }
-            }
-
             if (choice == 2)
             {
                 Console.WriteLine("\nSorry, this guide is for people who are new to fighting games and want to learn.");
                 return;
             }
 
-            //look into since it displays after fg_character is finished
-            if (choice != 1 || choice != 2)
+            else if (choice != 1)
             {
                 Console.WriteLine("Please enter the correct input");
+                continue;
+            }
+
+            Console.WriteLine("\nWhat fighting game would you like to learn?");
+            Console.WriteLine("Type the number for the game option.\n");
+
+            foreach (String game in games)
+            {
+                Console.WriteLine(game);
+            }
+
+            Console.WriteLine("\nInput: ");
+
+            int gamechoice;
+
+            if (int.TryParse(Console.ReadLine(), out gamechoice))
+            {
+
+            };
+
+            switch (gamechoice)
+            {
+                case 1:
+                    Console.WriteLine("\nTekken 8 is 3D fighting game that focus on movement.");
+                    Console.WriteLine("Tekken 8 has a good tutorial that teaches you about movement & mechanics");
+                    Console.WriteLine("\nWhat would you like to learn about Tekken 8?");
+                    Console.WriteLine("1.Movement \n2.Picking a Character \n3.Combos \n");
+                    Console.WriteLine("Input: ");
+                    // Same as above
+                    int fg_info = Convert.ToInt32(Console.ReadLine());
+                    if (fg_info == 1)
+                    {
+                        FG_Movement.Tekken_8();
+                    }
+                    if (fg_info == 2)
+                    {
+                        FG_Character.TK8_Characters();
+                    }
+                    if (fg_info == 3)
+                    {
+                        FG_Combos.TK8_Combos();
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("\nStreet Fighter 6 is 2D fighting game that focus on movement.");
+                    Console.WriteLine("Street Fighter 6 has a good tutorial that teaches you about movement & mechanics");
+                    Console.WriteLine("\nWhat would you like to learn about Street Fighter 6?");
+                    Console.WriteLine("1.Movement \n2.Picking a Character \n3.Combos \n");
+                    Console.WriteLine("Input: ");
+                    fg_info = Convert.ToInt32(Console.ReadLine());
+                    if (fg_info == 1)
+                    {
+                        FG_Movement.SF6();
+                    }
+                    if (fg_info == 2)
+                    {
+                        FG_Character.SF6_Characters();
+                    }
+                    if (fg_info == 3)
+                    {
+                        FG_Combos.SF6_Combos();
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("\nMortal Kombat 1 is 2D fighting game that focus on movement.");
+                    Console.WriteLine("Mortal Kombat 1 has a good tutorial that teaches you about movement & mechanics");
+                    Console.WriteLine("\nWhat would you like to learn about Mortal Kombat 1?");
+                    Console.WriteLine("1.Movement \n2.Picking a Character \n3.Combos \n");
+                    Console.WriteLine("Input: ");
+                    fg_info = Convert.ToInt32(Console.ReadLine());
+                    if (fg_info == 1)
+                    {
+                        FG_Movement.MK1();
+                    }
+                    break;
             }
 
             bool keepasking = true;
