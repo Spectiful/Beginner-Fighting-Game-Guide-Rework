@@ -108,6 +108,14 @@ class FG_Beginner_Guide
                     {
                         FG_Movement.MK1();
                     }
+                    if (fg_info == 2)
+                    {
+                        FG_Character.MK1_Characters();
+                    }
+                    if (fg_info == 3)
+                    {
+                        FG_Combos.MK1_Combos();
+                    }
                     break;
             }
 
